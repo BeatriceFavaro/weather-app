@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+<div class="container">
+
+<div>
+  <video src="videos/Sun shining on leaves.mp4" controls autoplay loop class="card background-video"> </video> 
+</div>
+
+
+  <div class="card main-part">
+  <div class="card-body">  
+      
+         <form id="find-city">
+           <input type="text" placeholder="Enter your city" autofocus id="query" />
+           <input type="submit" value="Take me there" class="btn btn-secondary" />
+           <input type="submit" value="Current city" class="btn btn-secondary" id="current-city-button" />
+         </form>
+  
+    <br/>
+     
+    <div class="row">   
+
+      <div class="col-6 ">  
+        <h2 id="entered-city"></h2>
+        <div id="date-time"> </div>
+        <div id="description"></div>
+      </div>
+
+      <div class="col-6">   
+        <span id="temperature-data">   
+          <span class="daily-temperature" id="daily-temperature"></span>
+          <span class="measurement"> <strong> <a href="#" id ="celsius"> C </a> | <a href="#" id="farenheit"> F </a> </strong> </span>
+          <span class="high"> H: <span id="high"></span> </span>
+          <span class="low"> L: <span id="low"></span> </span>
+        </span>
+      </div>  
+
+      
+    
+    </div>    
+  </div>
+
+
+  <p>
+    <div>
+      <span class="other-data">  
+        <div class="humidity"> <strong>  Humidity: </strong> <span id="humidity"></span>%</div> 
+        <div class="chance-of-rain"> <strong> Chance of rain: </strong> <span id="chance-of-rain"></span>%</div>
+        <div class="wind"> <strong> Wind: </strong> <span id="wind"></span>km/h</div>
+      </span>
+    </div>
+  </p>
+  
+  
+  
+  <br />
+  <br />
+
+
+  <div class="card next-five-days">       
+    <h3>   
+      Next five days
+    </h3>
+
+    
+    <div class="card-body">  
+      <div class="row justify-content-center">
+
+        <div class="col-sm-2 sun"> 
+          <div class="card text-center">
+            <div class="card-body next-five-days">
+
+              <span class="next-five-days-day"> Sun </span> 
+              <br />
+              <span class="next-five-days-emoji"> ⛅ </span>   
+              <br/>
+              <div class="future-H-L">  
+              H: 18 <br/> L: 11 
+              </div>
+    
+            </div>
+          </div>
+        </div>
+         
+        <div class="col-sm-2 mon"> 
+          <div class="card text-center">
+            <div class="card-body next-five-days">
+    
+              <span class="next-five-days-day"> Mon </span> 
+              <br />
+              <span class="next-five-days-emoji"> 🌞 </span>  
+              <br />
+              <span class="future-H-L">  
+              H: 15 <br/> L: 12
+              </span>
+    
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-2 tue"> 
+          <div class="card text-center">    
+            <div class="card-body next-five-days">
+    
+              <span class="next-five-days-day"> Tue </span> 
+              <br />
+              <span class="next-five-days-emoji"> ⛅ </span>
+              <br />
+              <span class="future-H-L">  
+              H: 13 <br/> L: 10
+              </span>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-2 wed">  
+          <div class="card text-center">  
+            <div class="card-body next-five-days">     
+  
+              <span class="next-five-days-day"> Wed </span> 
+              <br />
+              <span class="next-five-days-emoji"> 🌞 </span>
+              <br />
+              <span class="future-H-L">  
+              H: 16 <br/> L: 9
+              </span>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-2 thu">   
+          <div class="card text-center">  
+            <div class="card-body next-five-days">
+  
+              <span class="next-five-days-day"> Thu </span> 
+              <br />
+              <span class="next-five-days-emoji"> 🌞 </span>
+              <br/>
+              <span class="future-H-L">   
+              H: 17  <br/> L: 11
+              </span>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>  
+
+
+  <div class="footer">   
+      Enjoy some sunny hits   
+      <a 
+      href="https://open.spotify.com/playlist/0K31ScCQauynfQcAMQ4LP2?si=cd3e54a98dcf4612" 
+      class="card-link" 
+      target="_blank">
+      🎵   
+      </a>
+  </div>
+
+
+</div>
+<script src="js/script.js"> </script>
+</body>
+</html>
