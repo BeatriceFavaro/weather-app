@@ -1,0 +1,143 @@
+body {
+    display: block;
+    margin: 0 auto;
+    font-family: raleway;
+    position: relative;
+    zoom: 50%;
+    }
+    
+    div.container {
+      padding-top: 100px; 
+      border:red;
+    }
+    
+    .main-part {
+      padding-bottom: 20px;
+     }
+    
+    
+    .background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    }
+    
+    
+    form {
+        text-align: center;
+       }
+    #city {
+        margin: 40px auto;
+    }
+    
+    .btn {
+      padding: 3px 12px;
+      position: relative;
+      top: -2px;
+    }
+    
+    
+    
+    
+    #description {
+    font-size: 25px;
+    text-align: left;
+    padding-left: 50px;
+    } 
+    
+    #entered-city {
+        font-size: 80px;
+        position: relative;
+        left:40px;
+        top: 30px; 
+        text-align: justify;
+    }
+    
+     #date-time {
+      text-align: left;
+      padding-left: 50px;
+      font-size: 25px;
+    }
+    
+    
+    
+    .daily-temperature {
+    font-size: 90px;
+    position: relative;
+    left: 40px;
+    bottom: -15px;
+    }
+    
+    .measurement {
+    font-size: 17px; 
+    position: relative;
+    top: -40px; 
+    left: 30px;
+    }
+    
+    .high {
+      font-size: 20px;
+      position:relative;
+      left: 48px; 
+    }
+    
+    .low {
+      font-size: 20px;
+      position: relative;
+      bottom: -20px; 
+    }
+    
+    
+    .other-data {
+      font-size: 20px;
+      text-align: left;
+      position: relative;
+      top: 20px; 
+      left: 70px;
+    }
+    
+    
+    
+    h3 {
+      padding-top: 20px; 
+      padding-left: 65px; 
+    }
+    
+    .next-five-days {
+      font-size: 20px;
+      padding-top: 10px;
+      padding-bottom: 40px;
+    }
+    
+    .next-five-days-day {
+      font-weight: bold;
+    }
+    
+    .next-five-days-emoji {
+      font-size: 40px;
+      position: relative;
+      bottom: -10px; 
+      
+    }
+    
+    
+    .future-H-L {
+     position: relative;
+     bottom: -25px; 
+    
+    }
+    
+    .footer {
+    text-align: center;
+    font-size: 20px; 
+    padding-top: 40px;
+    }
+    
+    a {
+      text-decoration: none;
+    }
+    
+    
+    
