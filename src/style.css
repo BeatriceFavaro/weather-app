@@ -7,7 +7,7 @@ body {
     zoom: 50%;
     }
     
-    div.container {
+    div.weather-app {
       padding-top: 100px; 
       border:red;
     }
