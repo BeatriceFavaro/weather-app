@@ -17,11 +17,12 @@
 
 
 <body>
-<div class="container">
-<div class="weather-app"> 
-<div>
-  <video src="videos/Sun shining on leaves.mp4" controls autoplay loop class="card background-video"> </video> 
-</div>
+<div class="container">  
+  <div class="weather-app"> 
+
+   <div class="card" id="background-video">
+    <video src="videos/Sun shining on leaves.mp4" controls autoplay loop > </video> 
+   </div>
 
 
   <div class="card main-part">
@@ -41,15 +42,25 @@
         <h2 id="entered-city" class="entered-city"></h2>
         <div id="date-time"> </div>
         <div id="description"></div>
+        <div> <img src="images/sunny.png" alt="sunny" id="weather-icon"> </div>
       </div>
 
       <div class="col-6">   
         <span id="temperature-data">   
           <span class="daily-temperature" id="daily-temperature"></span>
           <span class="measurement"> <strong> <a href="#" id ="celsius"> C </a> | <a href="#" id="farenheit"> F </a> </strong> </span>
-          <span class="high"> H: <span id="high"></span></span>
-          <span class="low"> L: <span id="low"></span></span>
+          <span id="high-low">  
+            <div class="high"> H: <span id="high"></span></div>
+            <div class="low"> L: <span id="low"></span></div>
+          </span>
         </span>
+
+        <span class="other-data">  
+          <div class="humidity"> <strong>  Humidity: </strong> <span id="humidity"></span>%</div> 
+          <div class="chance-of-rain"> <strong> Chance of rain: </strong> <span id="chance-of-rain"></span>%</div>
+          <div class="wind"> <strong> Wind: </strong> <span id="wind"></span>km/h</div>
+        </span>
+        
       </div>  
 
       
@@ -57,18 +68,7 @@
     </div>    
   </div>
 
-
-  <p>
-    <div>
-      <span class="other-data">  
-        <div class="humidity"> <strong>  Humidity: </strong> <span id="humidity"></span>%</div> 
-        <div class="chance-of-rain"> <strong> Chance of rain: </strong> <span id="chance-of-rain"></span>%</div>
-        <div class="wind"> <strong> Wind: </strong> <span id="wind"></span>km/h</div>
-      </span>
-    </div>
-  </p>
-  
-  
+ 
   
   <br />
   <br />
@@ -169,22 +169,33 @@
   </div>  
 
 
-  <div class="footer" id="footer">   
-      Enjoy some sunny hits   
-      <a 
-      href="https://open.spotify.com/playlist/0K31ScCQauynfQcAMQ4LP2?si=cd3e54a98dcf4612" 
-      class="card-link" 
-      id="card-link"
-      target="_blank">
-      🎵   
-      </a>
-  </div>
-<small>
-  <a href="https://github.com/beatricefavaro/weather-app" target="_blank"> Open-source code </a> by  Beatrice Favaro
-</small>
+      <div class="footer" id="footer">   
 
+        Enjoy some sunny hits   
+        <a 
+        href="https://open.spotify.com/playlist/0K31ScCQauynfQcAMQ4LP2?si=cd3e54a98dcf4612" 
+        class="card-link" 
+        id="card-link"
+        target="_blank">
+        🎵   
+        </a>
+        <small>
+          <a 
+            href="https://github.com/beatricefavaro/weather-app" 
+            target="_blank"
+            id="small"> 
+            Open-source code 
+          </a> 
+            by  Beatrice Favaro
+        </small>      
+      </div>
+
+
+  </div>
+  </div>
 </div>
-</div>
+
+
 <script src="src/app.js"> </script>
 </body>
 </html>

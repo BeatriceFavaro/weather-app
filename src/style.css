@@ -17,25 +17,27 @@ body {
      }
     
     
-    .background-video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
+    #background-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+  
     }
     
     
     form {
         text-align: center;
        }
+  
     #find-city {
       padding-top: 20px;
       font-size: large;
     }
+
     #city {
-        margin: 40px auto;
-      
+        margin: 40px auto; 
     }
 
 
@@ -61,6 +63,14 @@ body {
         top: 30px; 
         text-align: justify;
     }
+
+    #weather-icon{
+      width: 80px;
+      position: relative;
+      left:180px;
+      top: 30px; 
+      padding-bottom: 20px;
+    }
     
      #date-time {
       text-align: left;
@@ -77,24 +87,24 @@ body {
     left: 40px;
     bottom: -15px;
     }
+
     
     .measurement {
     font-size: 17px; 
     position: relative;
     top: -40px; 
-    left: 30px;
+    left: 42px;
     }
-    
-    .high {
-      font-size: 20px;
+
+     #celsius, #farenheit, #card-link, #small {
+      text-decoration: none;
+    }
+
+    #high-low {
+     font-size: 20px;
       position:relative;
-      left: 48px; 
-    }
-    
-    .low {
-      font-size: 20px;
-      position: relative;
-      bottom: -20px; 
+      left: 200px;  
+      top: -70px;
     }
     
     
@@ -102,8 +112,8 @@ body {
       font-size: 20px;
       text-align: left;
       position: relative;
-      top: 20px; 
-      left: 70px;
+      top: 25px; 
+      left: 45px;
     }
     
     
@@ -142,10 +152,14 @@ body {
     font-size: 20px; 
     padding-top: 40px;
     }
-    
-    a {
-      text-decoration: none;
-    }
-    
-    
+
+       
+    small {
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      top: 10px; 
+      
+  }
     
