@@ -68,14 +68,19 @@ document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed)
 document.querySelector("#low").innerHTML = Math.round(response.data.main.temp_min);
 document.querySelector("#high").innerHTML = Math.round(response.data.main.temp_max);
 document.querySelector("#description").innerHTML = response.data.weather[0].main;
+//document.querySelector("#footer").innerHTML = response.data.weather[0].main;
+
 }
+
+
+console.log("apiUrl");
 
 
 function searchCity(city){
   let apiKey = "c45931ea5b2d65475fc4e704a2ae7306";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`; 
   axios.get(apiUrl).then(displayWeatherCondition);
-}
+ }
 
 searchCity("Venice")
 
@@ -127,9 +132,24 @@ function convertToFarenheit(event) {
     }
   
   
-    let farenheit = document.querySelector("#farenheit");
+  let farenheit = document.querySelector("#farenheit");
   farenheit.addEventListener("click", convertToFarenheit);
   
   let celsius = document.querySelector("#celsius");
   celsius.addEventListener("click", convertToCelsius);
   
+
+  //6 
+  
+  //let footer = document.querySelector("#footer")
+  //let description = document.querySelector("#description")
+
+  
+  //if (description === "sunny" || div.description === "clear") {
+//    footer.innerHTML = `Enjoy some sunny hits ${card-link}`;
+//  } else { if 
+  //  (description === "clouds") {
+    //  footer.innerHTML = `Enjoy some rainy hits ${card-link}`;
+    //}  
+  //}
+
