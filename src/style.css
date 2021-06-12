@@ -55,6 +55,10 @@ body {
     text-align: left;
     padding-left: 50px;
     } 
+
+    #description:first-letter {
+      text-transform: capitalize;
+    }
     
     #entered-city {
         font-size: 80px;
@@ -64,13 +68,7 @@ body {
         text-align: justify;
     }
 
-    #weather-icon{
-      width: 80px;
-      position: relative;
-      left:180px;
-      top: 30px; 
-      padding-bottom: 20px;
-    }
+   
     
      #date-time {
       text-align: left;

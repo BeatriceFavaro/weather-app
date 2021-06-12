@@ -1,4 +1,3 @@
-// week 4, challenge 1
 let now = new Date();
 let days = [
   "Sunday",
@@ -39,27 +38,10 @@ if (minutes < 10){
   minutes = `0${minutes}`;
 }
 
-
 let formatDateTime = document.querySelector("#date-time");
-formatDateTime.innerHTML = `${day},  ${month}  ${date},  ${year} at ${hours}:${minutes}`;
+formatDateTime.innerHTML = `Last update: ${day},  ${month}  ${date},  ${year} at ${hours}:${minutes}`;
 
 
-//next five days 
-
-//function displayForecast(response){
-//  console.log(response)
-//}
-
-//function searchCity(city){ 
-//let apiKey = "c45931ea5b2d65475fc4e704a2ae7306";
-//let apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
-//axios.get(apiUrlForecast).then(displayForecast);
-//}
-
-
-
-
-// week 4, challenge 2
 function displayWeatherCondition(response) {
 document.querySelector("#entered-city").innerHTML = response.data.name; 
 document.querySelector("#daily-temperature").innerHTML = Math.round(response.data.main.temp); 
@@ -67,14 +49,22 @@ document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
 document.querySelector("#low").innerHTML = Math.round(response.data.main.temp_min);
 document.querySelector("#high").innerHTML = Math.round(response.data.main.temp_max);
-document.querySelector("#description").innerHTML = response.data.weather[0].main;
+document.querySelector("#description").innerHTML = response.data.weather[0].description;
 //document.querySelector("#footer").innerHTML = response.data.weather[0].main;
+
+iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
+iconElement.setAttribute("alt", `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`); 
 
 }
 
 
-console.log("apiUrl");
-
+//#weather-icon{
+  //width: 80px;
+  //position: relative;
+  //left:180px;
+  //top: 30px; 
+  //padding-bottom: 20px;
+//}
 
 function searchCity(city){
   let apiKey = "c45931ea5b2d65475fc4e704a2ae7306";
@@ -153,3 +143,15 @@ function convertToFarenheit(event) {
     //}  
   //}
 
+
+//next five days 
+
+//function displayForecast(response){
+//  console.log(response)
+//}
+
+//function searchCity(city){ 
+//let apiKey = "c45931ea5b2d65475fc4e704a2ae7306";
+//let apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+//axios.get(apiUrlForecast).then(displayForecast);
+//}
