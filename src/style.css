@@ -98,6 +98,15 @@ body {
       text-decoration: none;
     }
 
+    .active {
+      color: black;
+      cursor: default;
+    }
+
+    .active:hover {
+      color: black;
+    }
+
     #high-low {
      font-size: 20px;
       position:relative;

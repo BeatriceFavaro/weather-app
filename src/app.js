@@ -43,8 +43,9 @@ formatDateTime.innerHTML = `Last update: ${day},  ${month}  ${date},  ${year} at
 
 
 function displayWeatherCondition(response) {
+celsiusTemperature = response.data.main.temp;
 document.querySelector("#entered-city").innerHTML = response.data.name; 
-document.querySelector("#daily-temperature").innerHTML = Math.round(response.data.main.temp); 
+document.querySelector("#daily-temperature").innerHTML = Math.round(celsiusTemperature); 
 document.querySelector("#humidity").innerHTML = response.data.main.humidity; 
 document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
 document.querySelector("#low").innerHTML = Math.round(response.data.main.temp_min);
@@ -54,6 +55,8 @@ document.querySelector("#description").innerHTML = response.data.weather[0].desc
 
 iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
 iconElement.setAttribute("alt", `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`); 
+
+
 
 }
 
@@ -105,22 +108,25 @@ currentCityButton.addEventListener("click", getCurrentCity)
 
 
 
-// week 4, challenge 3
 function convertToFarenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#daily-temperature");
-  let dailyTemperature = temperatureElement.innerHTML;
-  temperatureElement.innerHTML = 66;
+  celsius.classList.remove("active"); 
+  farenheit.classList.add("active");
+  let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(farenheitTemperature);
   }
   
   
   function convertToCelsius(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#daily-temperature");
-    let dailyTemperature = temperatureElement.innerHTML;
-    temperatureElement.innerHTML = 16;
+    celsius.classList.add("active"); 
+    farenheit.classList.remove("active");
+    temperatureElement.innerHTML = Math.round(celsiusTemperature);
     }
   
+  let celsiusTemperature = null; 
   
   let farenheit = document.querySelector("#farenheit");
   farenheit.addEventListener("click", convertToFarenheit);
