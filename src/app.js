@@ -108,13 +108,13 @@ currentCityButton.addEventListener("click", getCurrentCity)
 
 
 
-function convertToFarenheit(event) {
+function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#daily-temperature");
   celsius.classList.remove("active"); 
-  farenheit.classList.add("active");
-  let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(farenheitTemperature);
+  fahrenheit.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
   }
   
   
@@ -122,14 +122,14 @@ function convertToFarenheit(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#daily-temperature");
     celsius.classList.add("active"); 
-    farenheit.classList.remove("active");
+    fahrenheit.classList.remove("active");
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
     }
   
   let celsiusTemperature = null; 
   
-  let farenheit = document.querySelector("#farenheit");
-  farenheit.addEventListener("click", convertToFarenheit);
+  let fahrenheit = document.querySelector("#fahrenheit");
+  fahrenheit.addEventListener("click", convertToFahrenheit);
   
   let celsius = document.querySelector("#celsius");
   celsius.addEventListener("click", convertToCelsius);
