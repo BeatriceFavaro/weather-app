@@ -77,7 +77,12 @@ body {
       font-size: 25px;
     }
     
-    
+    #icon{
+      width: 120px;
+      position: relative;
+      left:px;
+      padding-bottom: 20px;
+    }
     
     .daily-temperature {
     font-size: 90px;
@@ -94,6 +99,7 @@ body {
     left: 42px;
     }
 
+    
      #celsius, #fahrenheit, #card-link, #small {
       text-decoration: none;
     }

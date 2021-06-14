@@ -53,21 +53,14 @@ document.querySelector("#high").innerHTML = Math.round(response.data.main.temp_m
 document.querySelector("#description").innerHTML = response.data.weather[0].description;
 //document.querySelector("#footer").innerHTML = response.data.weather[0].main;
 
+iconElement = document.querySelector("#icon")
 iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
 iconElement.setAttribute("alt", `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`); 
-
-
 
 }
 
 
-//#weather-icon{
-  //width: 80px;
-  //position: relative;
-  //left:180px;
-  //top: 30px; 
-  //padding-bottom: 20px;
-//}
+
 
 function searchCity(city){
   let apiKey = "c45931ea5b2d65475fc4e704a2ae7306";
@@ -88,8 +81,6 @@ let city = document.querySelector("#find-city");
 city.addEventListener("submit", typeCityName);
 
 
-
-//5
 
 function searchLocation(position){
   let apiKey = "c45931ea5b2d65475fc4e704a2ae7306";
