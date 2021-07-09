@@ -136,30 +136,35 @@ body {
       padding-left: 65px; 
     }
     
+
+
     .next-five-days {
-      font-size: 20px;
+      font-size: 25px;
       padding-top: 10px;
       padding-bottom: 40px;
     }
     
     .next-five-days-day {
+      font-size: 25px;
       font-weight: bold;
     }
     
-    .next-five-days-emoji {
+    .next-five-days-image {
       font-size: 40px;
       position: relative;
-      bottom: -10px; 
-      
+      bottom: -10px;   
     }
     
-    
-    .future-H-L {
-     position: relative;
-     bottom: -25px; 
-    
+    .weather-forecast-temperature{
+      font-size: 22px;
+    }
+    .weather-forecast-temperature-min {
+      opacity: 0.5;
     }
     
+
+
+
     .footer {
     text-align: center;
     font-size: 20px; 

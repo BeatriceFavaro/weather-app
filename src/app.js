@@ -42,6 +42,38 @@ let formatDateTime = document.querySelector("#date-time");
 formatDateTime.innerHTML = `Last update: ${day},  ${month}  ${date},  ${year} at ${hours}:${minutes}`;
 
 
+function displayForecast() {
+let forecastElement = document.querySelector("#forecast");
+
+let forecastHTML = `<div class="row"`; 
+forecastHTML = 
+  forecastHTML + 
+  `
+    <div class="col-sm-2"> 
+      <div class="card text-center">
+        <div class="card-body next-five-days">
+          <div class="next-five-days-day">Sun</div> 
+            <img 
+            src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
+            alt=""
+            class="next-five-days-image">  
+
+            <div class="weather-forecast-temperature">  
+                <span class="weather-forecast-temperature-max">18°</span>  
+                <span class="weather-forecast-temperature-min">11°</span>
+            </div>
+          </div>
+        </div>
+      </div>       
+    </div>  
+  `;
+forecastHTML = `</div>`; 
+forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
+
+
 function displayWeatherCondition(response) {
 celsiusTemperature = response.data.main.temp;
 document.querySelector("#entered-city").innerHTML = response.data.name; 
