@@ -45,33 +45,37 @@ formatDateTime.innerHTML = `Last update: ${day},  ${month}  ${date},  ${year} at
 function displayForecast() {
 let forecastElement = document.querySelector("#forecast");
 
-let forecastHTML = `<div class="row"`; 
-forecastHTML = 
-  forecastHTML + 
-  `
-    <div class="col-sm-2"> 
-      <div class="card text-center">
-        <div class="card-body next-five-days">
-          <div class="next-five-days-day">Sun</div> 
-            <img 
-            src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
-            alt=""
-            class="next-five-days-image">  
+let days = ["Thu", "Fri", "Sat","Sun", "Mon"]; 
 
-            <div class="weather-forecast-temperature">  
-                <span class="weather-forecast-temperature-max">18°</span>  
-                <span class="weather-forecast-temperature-min">11°</span>
+let forecastHTML = `<div class="row">`;
+days.forEach(function (day) {
+  forecastHTML = 
+    forecastHTML + 
+    `
+      <div class="col-sm-2"> 
+        <div class="card text-center">
+          <div class="card-body next-five-days">
+            <div class="next-five-days-day">${day}</div> 
+              <img 
+              src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png"
+              alt=""
+              class="next-five-days-image">  
+
+              <div class="weather-forecast-temperature">  
+                  <span class="weather-forecast-temperature-max">18°</span>  
+                  <span class="weather-forecast-temperature-min">11°</span>
+              </div>
             </div>
           </div>
-        </div>
-      </div>       
-    </div>  
-  `;
-forecastHTML = `</div>`; 
+        </div>       
+      </div>  
+    `;   
+});
+forecastHTML = forecastHTML + `</div>`; 
 forecastElement.innerHTML = forecastHTML;
+console.log(forecastHTML);
 }
 
-displayForecast();
 
 
 function displayWeatherCondition(response) {
@@ -90,7 +94,6 @@ iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.dat
 iconElement.setAttribute("alt", `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`); 
 
 }
-
 
 
 
@@ -156,7 +159,9 @@ function convertToFahrenheit(event) {
   
   let celsius = document.querySelector("#celsius");
   celsius.addEventListener("click", convertToCelsius);
+
   
+  displayForecast();
 
   //6 
   
