@@ -47,7 +47,7 @@ let forecastElement = document.querySelector("#forecast");
 
 let days = ["Thu", "Fri", "Sat","Sun", "Mon"]; 
 
-let forecastHTML = `<div class="row">`;
+let forecastHTML = "";
 days.forEach(function (day) {
   forecastHTML = 
     forecastHTML + 
@@ -92,9 +92,19 @@ document.querySelector("#description").innerHTML = response.data.weather[0].desc
 iconElement = document.querySelector("#icon")
 iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
 iconElement.setAttribute("alt", `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`); 
+console.log(response.data); 
 
+getForecast(response.data.coord);
 }
 
+function getForecast(coordinates){
+  console.log(coordinates);
+}
+
+
+
+
+https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
 
 
 function searchCity(city){
@@ -102,6 +112,7 @@ function searchCity(city){
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`; 
   axios.get(apiUrl).then(displayWeatherCondition);
  }
+
 
 searchCity("Venice")
 

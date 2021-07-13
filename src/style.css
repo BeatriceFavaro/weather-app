@@ -144,6 +144,10 @@ body {
       padding-bottom: 40px;
     }
     
+    #forecast {
+text-align: center;
+    }
+
     .next-five-days-day {
       font-size: 25px;
       font-weight: bold;
