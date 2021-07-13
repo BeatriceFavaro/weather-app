@@ -99,6 +99,10 @@ getForecast(response.data.coord);
 
 function getForecast(coordinates){
   console.log(coordinates);
+  let apiKey = "c45931ea5b2d65475fc4e704a2ae7306";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metrics;`
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast); 
 }
 
 
@@ -172,7 +176,7 @@ function convertToFahrenheit(event) {
   celsius.addEventListener("click", convertToCelsius);
 
   
-  displayForecast();
+  
 
   //6 
   
