@@ -134,10 +134,13 @@ body {
     h3 {
       padding-top: 20px; 
       padding-left: 65px; 
+      padding-bottom: 20px;
     }
     
-
-
+    .center-row {
+      margin: auto;
+      display: block;
+    }
     .next-five-days {
       font-size: 25px;
       padding-top: 10px;

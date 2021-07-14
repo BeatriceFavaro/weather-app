@@ -52,7 +52,7 @@ days.forEach(function (day) {
   forecastHTML = 
     forecastHTML + 
     `
-      <div class="col-sm-2"> 
+      <div class="col-sm-2 center-row"> 
         <div class="card text-center">
           <div class="card-body next-five-days">
             <div class="next-five-days-day">${day}</div> 
@@ -95,7 +95,24 @@ iconElement.setAttribute("alt", `http://openweathermap.org/img/wn/${response.dat
 console.log(response.data); 
 
 getForecast(response.data.coord);
+//displayOnFooter(response.data.weather[0].description)
 }
+
+
+//function displayOnFooter(response) {
+  //console.log(response);
+  
+  //let enjoy = document.querySelector("#enjoy"); 
+  //let description = document.querySelector("#description")
+  //if (description === "sunny" || div.description === "clear") {
+    //enjoy.innerHTML = `Enjoy some sunny hits ${card-link}`;
+  //} else { if 
+  //(description === "clouds") {
+  //enjoy.innerHTML = `Enjoy some rainy hits ${card-link}`;
+    //}  
+  //}
+
+//}  
 
 function getForecast(coordinates){
   console.log(coordinates);
@@ -180,17 +197,8 @@ function convertToFahrenheit(event) {
 
   //6 
   
-  //let footer = document.querySelector("#footer")
-  //let description = document.querySelector("#description")
 
   
-  //if (description === "sunny" || div.description === "clear") {
-//    footer.innerHTML = `Enjoy some sunny hits ${card-link}`;
-//  } else { if 
-  //  (description === "clouds") {
-    //  footer.innerHTML = `Enjoy some rainy hits ${card-link}`;
-    //}  
-  //}
 
 
 //next five days 
@@ -204,3 +212,5 @@ function convertToFahrenheit(event) {
 //let apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
 //axios.get(apiUrlForecast).then(displayForecast);
 //}
+
+
