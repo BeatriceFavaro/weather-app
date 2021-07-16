@@ -103,15 +103,14 @@ document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed)
 document.querySelector("#description").innerHTML = response.data.weather[0].description;
 //document.querySelector("#footer").innerHTML = response.data.weather[0].main;
 
-iconElement = document.querySelector("#icon")
+let iconElement = document.querySelector("#icon");
 iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
 iconElement.setAttribute("alt", `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`); 
 //console.log(response.data); 
 
 getForecast(response.data.coord);
 
-
-//displayOnFooter(response.data.weather[0].description)
+//displayOnFooter(response.data.weather[0].description);
 }
 
 
