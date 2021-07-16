@@ -113,14 +113,7 @@ body {
       color: black;
     }
 
-    #high-low {
-     font-size: 20px;
-      position:relative;
-      left: 200px;  
-      top: -70px;
-    }
-    
-    
+        
     .other-data {
       font-size: 20px;
       text-align: left;

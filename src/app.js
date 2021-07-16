@@ -90,7 +90,7 @@ function getForecast(coordinates){
   //console.log(coordinates);
   let apiKey = "c45931ea5b2d65475fc4e704a2ae7306";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+  //console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast); 
 }
 
@@ -100,8 +100,6 @@ document.querySelector("#entered-city").innerHTML = response.data.name;
 document.querySelector("#daily-temperature").innerHTML = Math.round(celsiusTemperature); 
 document.querySelector("#humidity").innerHTML = response.data.main.humidity; 
 document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-document.querySelector("#low").innerHTML = Math.round(response.data.main.temp_min);
-document.querySelector("#high").innerHTML = Math.round(response.data.main.temp_max);
 document.querySelector("#description").innerHTML = response.data.weather[0].description;
 //document.querySelector("#footer").innerHTML = response.data.weather[0].main;
 
