@@ -53,7 +53,7 @@ body {
     #description {
     font-size: 25px;
     text-align: left;
-    padding-left: 40px;
+    padding-left: 50px;
     } 
 
     #description:first-letter {
@@ -61,31 +61,31 @@ body {
     }
     
     #entered-city {
-        font-size: 80px;
+        font-size: 100px;
         position: relative;
         left:40px;
         top: 30px; 
         text-align: justify;
+        padding-bottom: 20px;
     }
 
    
-    
-     #date-time {
+    #date-time {
       text-align: left;
-      padding-left: 40px;
-      padding-top: 20px;
+      padding-left: 50px;
+      padding-top: 40px;
       font-size: 25px;
     }
     
     #icon{
-      width: 120px;
+      width: 140px;
       position: relative;
       left: 40px;
-      padding-bottom: 20px;
+      
     }
     
     .daily-temperature {
-    font-size: 90px;
+    font-size: 100px;
     position: relative;
     left: 40px;
     bottom: -15px;
@@ -93,7 +93,7 @@ body {
 
     
     .measurement {
-    font-size: 17px; 
+    font-size: 25px; 
     position: relative;
     top: -40px; 
     left: 42px;
@@ -115,14 +115,14 @@ body {
 
         
     .other-data {
-      font-size: 20px;
+      font-size: 25px;
       text-align: left;
       position: relative;
-      top: 25px; 
+      top: 40px; 
       left: 45px;
     }
     
-    
+  
     
     h3 {
       padding-top: 20px; 
