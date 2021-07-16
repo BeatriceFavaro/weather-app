@@ -51,7 +51,7 @@ let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 function displayForecast(response) {
 
-  let forecast = response.data.daily;
+let forecast = response.data.daily;
 
 let forecastElement = document.querySelector("#forecast");
 
@@ -86,6 +86,29 @@ forecastElement.innerHTML = forecastHTML;
 
 }
 
+//background video
+
+function changeBackground (response) {
+
+let descriptionElement = response.data.weather[0].description;
+
+let vid = document.querySelector("#background");
+if (descriptionElement = "Light rain") {
+  vid.src = "video/sun shining on leaves.mp4" 
+} else if (descriptionElement = "Scattered clouds") {
+  vid.src = "video/Cloudy sky.mp4"
+}
+
+}
+
+function getDescription () {
+  let apiKey = "c45931ea5b2d65475fc4e704a2ae7306";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(changeBackground);
+
+}
+
+
 function getForecast(coordinates){
   //console.log(coordinates);
   let apiKey = "c45931ea5b2d65475fc4e704a2ae7306";
@@ -112,31 +135,7 @@ console.log(response.data);
 
 getForecast(response.data.coord);
 
-//displayOnFooter(response.data.weather[0].description);
 }
-
-
-//function displayOnFooter(response) {
-  //console.log(response);
-  
-  //let enjoy = document.querySelector("#enjoy"); 
-  //let description = document.querySelector("#description")
-  //if (description === "sunny" || div.description === "clear") {
-    //enjoy.innerHTML = `Enjoy some sunny hits ${card-link}`;
-  //} else { if 
-  //(description === "clouds") {
-  //enjoy.innerHTML = `Enjoy some rainy hits ${card-link}`;
-    //}  
-  //}
-
-//}  
-
-
-
-
-
-//why is this here?
-//https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
 
 
 function searchCity(city){
@@ -205,19 +204,3 @@ function convertToFahrenheit(event) {
 
   
   
-
-  //6 
-
-//next five days 
-
-//function displayForecast(response){
-//  console.log(response)
-//}
-
-//function searchCity(city){ 
-//let apiKey = "c45931ea5b2d65475fc4e704a2ae7306";
-//let apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
-//axios.get(apiUrlForecast).then(displayForecast);
-//}
-
-
