@@ -14,7 +14,7 @@ body {
     
     .main-part {
       padding-bottom: 20px;
-     }
+         }
     
     
     #background-video {
@@ -138,7 +138,7 @@ body {
       font-size: 25px;
       padding-top: 10px;
       padding-bottom: 40px;
-    }
+        }
    
     .next-five-days-day {
       font-size: 25px;
@@ -158,6 +158,15 @@ body {
       opacity: 0.5;
     }
     
+    #forecast-card:hover {
+      transition: all 200ms ease-in-out;
+      box-shadow: 1px 3px 7px rgb(161 161 161 / 64%);
+      border-radius: 10px;
+    }
+
+    #forecast-card {
+    box-sizing:content-box;
+    }
 
     .footer {
     text-align: center;
@@ -166,12 +175,33 @@ body {
     }
 
        
-    small {
-      text-align: center;
+        
+  .open-source-button {
+     text-align: center;
       display: block;
       margin: 0 auto;
       position: relative;
-      top: 10px; 
-      
+      color: white;
+      background-color: transparent;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
   }
+
+
+  .open-source-button:hover {
+    background-color:white;
+    transition: all 150ms ease-in-out;
+    color: black;
+  }
+
+
+  .small {
+    color: white;
+        }
+
+  .a:hover {
+    color: blue;
+    transition: all 200ms ease-in-out;
     
+  }

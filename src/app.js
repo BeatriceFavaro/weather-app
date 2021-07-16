@@ -63,7 +63,7 @@ forecast.forEach(function (forecastDay, index) {
     `
       <div class="col-sm-2 center-row"> 
         <div class="card text-center">
-          <div class="card-body next-five-days">
+          <div class="card-body next-five-days" id="forecast-card">
             <div class="next-five-days-day">${formatDay(forecastDay.dt)}</div> 
               <img 
               src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
