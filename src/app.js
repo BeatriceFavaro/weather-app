@@ -98,6 +98,8 @@ function displayWeatherCondition(response) {
 celsiusTemperature = response.data.main.temp;
 document.querySelector("#entered-city").innerHTML = response.data.name; 
 document.querySelector("#daily-temperature").innerHTML = Math.round(celsiusTemperature); 
+document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
+
 document.querySelector("#humidity").innerHTML = response.data.main.humidity; 
 document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
 document.querySelector("#description").innerHTML = response.data.weather[0].description;
@@ -106,7 +108,7 @@ document.querySelector("#description").innerHTML = response.data.weather[0].desc
 let iconElement = document.querySelector("#icon");
 iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
 iconElement.setAttribute("alt", `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`); 
-//console.log(response.data); 
+console.log(response.data); 
 
 getForecast(response.data.coord);
 
