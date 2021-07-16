@@ -50,7 +50,8 @@ let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 }
 
 function displayForecast(response) {
-let forecast = response.data.daily;
+
+  let forecast = response.data.daily;
 
 let forecastElement = document.querySelector("#forecast");
 
@@ -88,8 +89,8 @@ forecastElement.innerHTML = forecastHTML;
 function getForecast(coordinates){
   //console.log(coordinates);
   let apiKey = "c45931ea5b2d65475fc4e704a2ae7306";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric;`
-  //console.log(apiUrl);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast); 
 }
 
@@ -135,8 +136,8 @@ getForecast(response.data.coord);
 
 
 
-
-https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+//why is this here?
+//https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
 
 
 function searchCity(city){
@@ -207,10 +208,6 @@ function convertToFahrenheit(event) {
   
 
   //6 
-  
-
-  
-
 
 //next five days 
 
