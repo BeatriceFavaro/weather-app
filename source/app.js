@@ -103,15 +103,17 @@ function changeBackground (response) {
   let vid = document.querySelector("#background");
   
   if (descriptionElement = "clear sky") {
-    vid.src.innerHTML = "videos/Sun shining on leaves.mp4" 
+    vid.src = "videos/Sun shining on leaves.mp4" 
   } else if (descriptionElement = "scattered clouds") {
-    vid.src.innerHTML = "videos/Cloudy sky.MP4"
+    vid.src = "videos/Cloudy sky.mp4"
   } else if (descriptionElement = "few clouds") {
-    vid.src.innerHTML = "videos/Cloudy sky.MP4"
-  }else if (descriptionElement = "Light rain") {
-    vid.src.innerHTML = "videos/Water droplets on a branch.MP4"
-  } else if (descriptionElement = "") {
-    vid.src = ""
+    vid.src = "videos/Cloudy sky.mp4"
+  } else if (descriptionElement = "Light rain") {
+    vid.src = "videos/Water droplets on a branch.mp4"
+  } else if (descriptionElement = "haze") {
+    vid.src = "videos/Tree in the mist.mp4"
+  } else {
+    vid.src = "https://coverr.co/videos/tall-trees-CiTGfD0JDY"
   }
   
   }
