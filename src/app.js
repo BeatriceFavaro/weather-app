@@ -101,7 +101,7 @@ if (descriptionElement = "Light rain") {
 
 }
 
-function getDescription () {
+function getDescription (coordinates) {
   let apiKey = "c45931ea5b2d65475fc4e704a2ae7306";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(changeBackground);
@@ -134,6 +134,7 @@ iconElement.setAttribute("alt", `http://openweathermap.org/img/wn/${response.dat
 console.log(response.data); 
 
 getForecast(response.data.coord);
+getDescription(response.data.coord.weather[0].description); 
 
 }
 
