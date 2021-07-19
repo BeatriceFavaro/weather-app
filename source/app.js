@@ -98,24 +98,23 @@ function getForecast(coordinates){
 
 function changeBackground (response) {
 
-  let descriptionElement = response.data.weather[0].description;
+  let descriptionElement = response.data.current.weather[0].description;
   
   let vid = document.querySelector("#background");
   
-  if (descriptionElement = "clear sky") {
-    vid.src = "videos/Sun shining on leaves.mp4" 
-  } else if (descriptionElement = "scattered clouds") {
-    vid.src = "videos/Cloudy sky.mp4"
-  } else if (descriptionElement = "few clouds") {
-    vid.src = "videos/Cloudy sky.mp4"
-  } else if (descriptionElement = "Light rain") {
-    vid.src = "videos/Water droplets on a branch.mp4"
-  } else if (descriptionElement = "haze") {
-    vid.src = "videos/Tree in the mist.mp4"
+  if (descriptionElement === "clear sky") {
+    vid.src = "videos/Sunny.mp4"; 
+  } else if (descriptionElement === "few clouds" || descriptionElement === "overcast clouds" || descriptionElement === "scattered clouds") {
+    vid.src = "videos/Cloudy.mp4";
+  } else if (descriptionElement === "light rain" || descriptionElement === "moderate rain") {
+    vid.src = "videos/Rainy.mp4";
+  } else if (descriptionElement === "heavy intensity rain") {
+    vid.src = "videos/Storm.mp4";
+  } else if (descriptionElement === "haze" || descriptionElement === "mist") {
+    vid.src = "videos/Mist.mp4";
   } else {
-    vid.src = "https://coverr.co/videos/tall-trees-CiTGfD0JDY"
+    vid.src = "video/Tall trees.mp4";
   }
-  
   }
   
   function getDescription (coordinates) {
@@ -144,7 +143,7 @@ iconElement.setAttribute("alt", `http://openweathermap.org/img/wn/${response.dat
 console.log(response.data); 
 
 getForecast(response.data.coord);
-getDescription(response.data.coord.weather[0].description); 
+getDescription(response.data.coord); 
 }
 
 
