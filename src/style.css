@@ -28,26 +28,28 @@ body {
     }
    
     
-    form {
-        text-align: center;
-       }
-  
-    #find-city {
+    .form-group {
+      text-align: center;
       padding-top: 20px;
       font-size: large;
-    }
-
-    #city {
-        margin: 40px auto; 
-    }
-
-
+      width: 100%;
+       }
+  
+  
+    
     .btn {
       padding: 3px 12px;
       position: relative;
       top: -2px;
     }
     
+    #current-city-button:hover, #take-me-there-button:hover {
+      background: white;
+      color: grey;
+      transition: all 200ms ease-in-out;
+      box-shadow: 1px 3px 7px rgb(161 161 161 / 64%);
+      border-radius: 10px;
+    }
     
     
     
