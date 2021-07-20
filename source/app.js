@@ -117,9 +117,9 @@ function changeBackground (response) {
     vid.src = "videos/FewClouds.mp4";
   } else if (specificElement === "tornado" || specificElement === "squalls") {
     vid.src = "videos/Tornado.mp4";
-  } else if (specificElement === "mist" ||  specificElement === "Smoke") {
+  } else if (specificElement === "mist" ||  specificElement === "smoke") {
     vid.src = "videos/Mist2.mp4";
-  } else if (specificElement === "fog" || specificElement === "Haze") {
+  } else if (specificElement === "fog" || specificElement === "haze") {
     vid.src = "videos/Foggy.mp4";
   }else if (specificElement === "sand/ dust whirls" || specificElement === "sand" || specificElement === "dust") {
     vid.src = "videos/Sand.mp4";
