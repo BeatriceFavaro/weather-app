@@ -104,7 +104,7 @@ function changeBackground (response) {
   
   if (descriptionElement === "clear sky") {
     vid.src = "videos/Sunny.mp4"; 
-  } else if (descriptionElement === "few clouds" || descriptionElement === "overcast clouds" || descriptionElement === "scattered clouds") {
+  } else if (descriptionElement === "few clouds" || descriptionElement === "overcast clouds" || descriptionElement === "scattered clouds" || descriptionElement === "broken clouds") {
     vid.src = "videos/Cloudy.mp4";
   } else if (descriptionElement === "light rain" || descriptionElement === "moderate rain") {
     vid.src = "videos/Rainy.mp4";
