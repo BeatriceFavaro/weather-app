@@ -98,30 +98,47 @@ function getForecast(coordinates){
 
 function changeBackground (response) {
 
-  let descriptionElement = response.data.current.weather[0].description;
-  
+  let mainElement = response.data.current.weather[0].main;
+  let specificElement = response.data.current.weather[0].description;
+    //console.log(response.data.current);
+
   let vid = document.querySelector("#background");
   
-  if (descriptionElement === "clear sky") {
+  if (mainElement === "Clear") {
     vid.src = "videos/Sunny.mp4"; 
-  } else if (descriptionElement === "few clouds" || descriptionElement === "overcast clouds" || descriptionElement === "scattered clouds" || descriptionElement === "broken clouds") {
-    vid.src = "videos/Cloudy.mp4";
-  } else if (descriptionElement === "light rain" || descriptionElement === "moderate rain") {
+  } else if (mainElement === "Snow" ) {
+    vid.src = "videos/Snow2.mp4";
+  } else if (specificElement === "scattered clouds" || specificElement === "broken clouds") {
+    vid.src = "videos/Clouds.mp4";
+  } else if (specificElement === "overcast clouds") {
+    vid.src = "videos/OvercastClouds3.mp4";
+  } else if (specificElement === "few clouds") {
+    vid.src = "videos/FewClouds.mp4";
+  } else if (mainElement === "Drizzle") {
+    vid.src = "videos/Rainy2.mp4";
+  } else if (mainElement === "Rain") {
     vid.src = "videos/Rainy.mp4";
-  } else if (descriptionElement === "heavy intensity rain") {
+  } else if (mainElement.main === "Thunderstorm") {
     vid.src = "videos/Storm.mp4";
-  } else if (descriptionElement === "haze" || descriptionElement === "mist") {
-    vid.src = "videos/Mist.mp4";
-  } else {
-    vid.src = "video/Tall trees.mp4";
+  } else if (specificElement === "tornado" || specificElement === "squalls") {
+    vid.src = "videos/Tornado.mp4";
+  } else if (specificElement === "mist" ||  specificElement === "Smoke") {
+    vid.src = "videos/Mist2.mp4";
+  } else if (specificElement === "fog" || specificElement === "Haze") {
+    vid.src = "videos/Foggy.mp4";
+  }else if (specificElement === "sand/ dust whirls" || specificElement === "sand" || specificElement === "dust") {
+    vid.src = "videos/Sand.mp4";
+  }else if (specificElement === "volcanic ash") {
+    vid.src = "videos/Volcano.mp4";
   }
   }
   
+
   function getDescription (coordinates) {
     let apiKey = "c45931ea5b2d65475fc4e704a2ae7306";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(changeBackground);
-   //console.log(apiUrl);
+   console.log(apiUrl);
   
   }
 
