@@ -88,7 +88,6 @@ forecastElement.innerHTML = forecastHTML;
 
 
 function getForecast(coordinates){
-  //console.log(coordinates);
   let apiKey = "c45931ea5b2d65475fc4e704a2ae7306";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast); 
@@ -100,26 +99,24 @@ function changeBackground (response) {
 
   let mainElement = response.data.current.weather[0].main;
   let specificElement = response.data.current.weather[0].description;
-    //console.log(response.data.current);
-
   let vid = document.querySelector("#background");
   
   if (mainElement === "Clear") {
     vid.src = "videos/Sunny.mp4"; 
   } else if (mainElement === "Snow" ) {
     vid.src = "videos/Snow2.mp4";
-  } else if (specificElement === "scattered clouds" || specificElement === "broken clouds") {
-    vid.src = "videos/Clouds.mp4";
-  } else if (specificElement === "overcast clouds") {
-    vid.src = "videos/OvercastClouds3.mp4";
-  } else if (specificElement === "few clouds") {
-    vid.src = "videos/FewClouds.mp4";
   } else if (mainElement === "Drizzle") {
     vid.src = "videos/Rainy2.mp4";
   } else if (mainElement === "Rain") {
     vid.src = "videos/Rainy.mp4";
   } else if (mainElement.main === "Thunderstorm") {
     vid.src = "videos/Storm.mp4";
+  } else if (specificElement === "scattered clouds" || specificElement === "broken clouds") {
+    vid.src = "videos/Clouds.mp4";
+  } else if (specificElement === "overcast clouds") {
+    vid.src = "videos/OvercastClouds3.mp4";
+  } else if (specificElement === "few clouds") {
+    vid.src = "videos/FewClouds.mp4";
   } else if (specificElement === "tornado" || specificElement === "squalls") {
     vid.src = "videos/Tornado.mp4";
   } else if (specificElement === "mist" ||  specificElement === "Smoke") {
