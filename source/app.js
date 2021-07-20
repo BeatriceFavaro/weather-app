@@ -82,8 +82,6 @@ forecast.forEach(function (forecastDay, index) {
 });
 forecastHTML = forecastHTML + `</div>`; 
 forecastElement.innerHTML = forecastHTML;
-//console.log(forecastHTML);
-
 }
 
 
